@@ -1,8 +1,8 @@
 import { GiCrossedAirFlows } from "react-icons/gi";
 const Footer = () => {
   return (
-    <div className="-mt-12">
-      <footer className="footer p-10 bg-blue-900 text-neutral-content">
+    <div className="-mt-12 ">
+      <footer className="footer p-10 bg-blue-900 text-neutral-content  mx-auto">
   <nav>
     <h6 className="footer-title">Services</h6> 
     <a className="link link-hover">Branding</a>

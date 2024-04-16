@@ -21,8 +21,8 @@ const Home = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <div className="bg-base-200">
-        <div className="container mx-auto mt-12">
+    <div className="bg-base-200 pb-12">
+        <div className="container mx-auto">
       {/* <h2 className="text-2xl">This is home</h2> */}
       <Swiper
         spaceBetween={30}
