@@ -1,0 +1,81 @@
+[
+      {
+        "id": 1,
+        "category": "Residential",
+        "estate_title": "Luxury Villa with Ocean View",
+        "image": "https://example.com/image1.jpg",
+        "segment_name": "Single-family homes",
+        "description": "Beautiful villa overlooking the ocean, with spacious rooms and modern amenities.",
+        "price": "$1,500,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Miami, Florida",
+        "facilities": ["Swimming Pool", "Spa", "Garden"]
+      },
+      {
+        "id": 2,
+        "category": "Residential",
+        "estate_title": "Modern Apartment in City Center",
+        "image": "https://example.com/image2.jpg",
+        "segment_name": "Apartments",
+        "description": "Contemporary apartment located in the heart of the city, close to amenities and transportation.",
+        "price": "$800,000",
+        "status": "sale",
+        "area": "1200 sq ft",
+        "location": "New York City, NY",
+        "facilities": ["Gym", "Concierge", "Parking"]
+      },
+      {
+        "id": 3,
+        "category": "Residential",
+        "estate_title": "Cozy Cottage in the Countryside",
+        "image": "https://example.com/image3.jpg",
+        "segment_name": "Vacation Rentals",
+        "description": "Charming cottage nestled in the countryside, surrounded by nature and tranquility.",
+        "price": "$400,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Cotswolds, UK",
+        "facilities": ["Fireplace", "Garden", "Terrace"]
+      },
+      {
+        "id": 4,
+        "category": "Residential",
+        "estate_title": "Spacious Family Home with Garden",
+        "image": "https://example.com/image4.jpg",
+        "segment_name": "Senior Living Communities",
+        "description": "Large family home with ample space, perfect for entertaining and relaxing.",
+        "price": "$600,000",
+        "status": "rent",
+        "area": "2500 sq ft",
+        "location": "Los Angeles, CA",
+        "facilities": ["Backyard", "Home Theater", "Office"]
+      },
+      {
+        "id": 5,
+        "category": "Residential",
+        "estate_title": "Luxury Condo with Panoramic Views",
+        "image": "https://example.com/image5.jpg",
+        "segment_name": "Townhouses",
+        "description": "Stunning condo with panoramic views of the city skyline, featuring luxurious amenities.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "1800 sq ft",
+        "location": "Chicago, IL",
+        "facilities": ["Roof Deck", "Fitness Center", "Concierge"]
+      },
+      {
+        "id": 6,
+        "category": "Residential",
+        "estate_title": "Modern Loft in Artsy Neighborhood",
+        "image": "https://example.com/image6.jpg",
+        "segment_name": "Student Housing",
+        "description": "Chic loft apartment located in an artsy neighborhood, perfect for students and young professionals.",
+        "price": "$900/month",
+        "status": "rent",
+        "area": "800 sq ft",
+        "location": "San Francisco, CA",
+        "facilities": ["Laundry Room", "Bike Storage", "Community Lounge"]
+      }
+    ]
+  
