@@ -15,6 +15,7 @@ import Errorpage from './components/ErrorPage/Errorpage';
 import EstateDetails from './components/EstateDetails/EstateDetails';
 import AuthProvider from './providers/AuthProvider';
 import CutomerReview from './CutomerReview';
+import PrivateRoutes from './Routes/PrivateRoutes';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/customersReview',
-        element: <CutomerReview></CutomerReview>
+        element: <PrivateRoutes><CutomerReview></CutomerReview></PrivateRoutes>
       }
     ]
   },
