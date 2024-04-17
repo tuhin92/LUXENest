@@ -1,46 +1,54 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
-import PropTypes from 'prop-types';
+import { createContext, useState, useEffect } from "react";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
+// Create context for authentication
 export const AuthContext = createContext(null);
+
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // create user 
-    const createUser = (email, password, photoURL) =>{
+    // Create GoogleAuthProvider here
+    const googleProvider = new GoogleAuthProvider();
+
+    // Function to create a new user with email and password
+    const createUser = (email, password, photoURL) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password, photoURL);
-    }
+    };
 
-    // sign in user 
-    const signInUser = (email, password) =>{
+    // Function to sign in user with email and password
+    const signInUser = (email, password) => {
         setLoading(true);
-        return signInWithEmailAndPassword(auth, email, password)
-    }
+        return signInWithEmailAndPassword(auth, email, password);
+    };
 
-    // observe auth state change 
-    useEffect( () => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log('Current value of the current user', currentUser);
+    // Function to sign in with Google
+    const signInWithGoogle = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    };
+
+    // Function to observe authentication state changes
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
-            console.log('observing current user', currentUser);
         });
+        return unsubscribe;
+    }, []);
 
-        return () =>{
-            unSubscribe();
-        }
-    }, [])
-
-    // sign out 
-    const logOut = () =>{
+    // Function to sign out
+    const logOut = () => {
         setLoading(true);
         return signOut(auth);
-    }
+    };
 
-    const authInfo = { user, createUser, signInUser, logOut, loading }
+    // Value object to be provided by the context
+    const authInfo = { user, createUser, signInUser, logOut, loading, signInWithGoogle };
+
+    // Provide the authInfo value to the children components
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
@@ -49,6 +57,3 @@ const AuthProvider = ({children}) => {
 };
 
 export default AuthProvider;
-AuthProvider.propTypes = {
-    children: PropTypes.node
-}

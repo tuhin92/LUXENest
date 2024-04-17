@@ -16,6 +16,7 @@ import EstateDetails from './components/EstateDetails/EstateDetails';
 import AuthProvider from './providers/AuthProvider';
 import CutomerReview from './CutomerReview';
 import PrivateRoutes from './Routes/PrivateRoutes';
+import Profile from './components/Profile';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: '/customersReview',
         element: <PrivateRoutes><CutomerReview></CutomerReview></PrivateRoutes>
+      },
+      {
+        path: '/profile',
+        element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
       }
     ]
   },

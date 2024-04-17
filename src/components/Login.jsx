@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { AuthContext } from '../providers/AuthProvider';
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
 
-    const {signInUser} = useContext(AuthContext);
+    const {signInUser, signInWithGoogle} = useContext(AuthContext);
 
     const [showPassword, setShowPassword] = useState(false);
+
+    const naviagte = useNavigate();
 
 
   const handleLogin = (e) => {
@@ -20,11 +23,26 @@ const Login = () => {
     signInUser(email, password)
     .then( result => {
         console.log(result.user);
+        e.target.reset();
+        naviagte('/');
     })
     .catch( error => {
-        console.error(error);
+        console.log('Invalid password or email');;
     })
   };
+
+
+  const handleGoogleSignIn = () => {
+    console.log('Attempting Google sign-in...');
+    signInWithGoogle()
+    .then(result => {
+        console.log('Google sign-in successful:', result.user);
+    })
+    .catch(error => {
+        console.error('Error signing in with Google:', error);
+    });
+}
+
 
   return (
     <div className="mb-24">
@@ -74,14 +92,20 @@ const Login = () => {
             Forgot password?
           </Link>
         </label>
-        <div className="form-control mt-6">
+        <div className="form-control mt-6 gap-4">
           <button className="btn btn-primary">Login</button>
-        </div>
-        <p className="text-center mt-6">
+
+          <p className="text-center mt-6">
           Don't have an account? 
           <Link to="/register" className='text-blue-600 font-bold ml-1'>Register</Link>
         </p>
+        <button onClick={handleGoogleSignIn} className="btn  bg-green-600"><FaGoogle className='text-2xl'></FaGoogle>Sign in with Google</button>
+          <button className="btn bg-orange-600"><FaGithub className='text-2xl'></FaGithub> Sign in with Github</button>
+        </div>
       </form>
+      <div>
+      
+      </div>
     </div>
   );
 };
