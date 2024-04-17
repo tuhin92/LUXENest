@@ -1,11 +1,30 @@
 import { NavLink } from "react-router-dom";
 import { GiCrossedAirFlows } from "react-icons/gi";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 const Navbar = () => {
+
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () =>{
+        logOut()
+        .then(() =>{
+            console.log('User logged out successfully');
+        })
+        .catch( error => {
+            console.error(error);
+        } )
+    }
+
+
     const navLinks = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/aboutUs'>About Us</NavLink></li>
+    {/* <li><NavLink to='/login'>Login</NavLink></li> */}
+    {/* <li><NavLink to='/register'>Register</NavLink></li> */}
+    <li><NavLink to='/customersReview'>Customers Reviews</NavLink></li>
     </>
     return (
         <div className="container mx-auto">
@@ -28,11 +47,16 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end gap-4">
-    <a className="btn btn-success"><NavLink to='/login'>Login</NavLink></a>
-    <a className="btn btn-warning"><NavLink to='/register'>Register</NavLink></a>
+    {
+        user ? <>
+            <span>{user.email}</span>
+            <button onClick={handleLogOut} className="btn bg-red-600 text-white">Sign Out</button>
+        </>
+        : <button className="btn btn-success text-white"><NavLink to='/login'>Login</NavLink></button>
+    }
   </div>
 </div>
-        </div>
+</div>
     );
 };
 

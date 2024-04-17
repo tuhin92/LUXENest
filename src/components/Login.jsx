@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
-    const [showPassword, setShowPassword] = useState(false);
 
+    const {signInUser} = useContext(AuthContext);
+
+    const [showPassword, setShowPassword] = useState(false);
 
 
   const handleLogin = (e) => {
@@ -13,6 +16,14 @@ const Login = () => {
     const email = form.get('email');
     const password = form.get('password');
     console.log(email, password);
+
+    signInUser(email, password)
+    .then( result => {
+        console.log(result.user);
+    })
+    .catch( error => {
+        console.error(error);
+    })
   };
 
   return (

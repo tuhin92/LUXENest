@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { AuthContext } from '../providers/AuthProvider';
 const Register = () => {
-    const [showPassword, setShowPassword] = useState(false);
 
+    const {createUser} = useContext(AuthContext);
+
+
+
+    const [showPassword, setShowPassword] = useState(false);
+ 
     const handleRegister = (e)=> {
         e.preventDefault();
         console.log(e.currentTarget);
@@ -13,6 +19,15 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(name, photo, email, password);
+
+        // create user in firebase
+        createUser(email, password, photo)
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error =>{
+            console.error(error);
+        } )
     }
 
     return (

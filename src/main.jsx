@@ -13,6 +13,8 @@ import Register from './components/Register';
 import AboutUS from './components/AboutUS';
 import Errorpage from './components/ErrorPage/Errorpage';
 import EstateDetails from './components/EstateDetails/EstateDetails';
+import AuthProvider from './providers/AuthProvider';
+import CutomerReview from './CutomerReview';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
         path: '/estate/:id',
         element: <EstateDetails></EstateDetails>,
         loader: ()=> fetch('../estates.json')
+      },
+      {
+        path: '/customersReview',
+        element: <CutomerReview></CutomerReview>
       }
     ]
   },
@@ -47,6 +53,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
