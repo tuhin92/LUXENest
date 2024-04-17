@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const CutomerReview = () => {
   return (
@@ -29,6 +30,9 @@ const CutomerReview = () => {
           />
         </figure>
         <div className="card-body">
+            <Helmet>
+                <title>LUXENest | Review</title>
+            </Helmet>
           <h2 className="card-title">Mike</h2>
           <p className="text-gray-600">That was amazing, i'm totally satisfied with their service</p>
           <div className="card-actions justify-end">

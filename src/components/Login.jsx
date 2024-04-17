@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { AuthContext } from '../providers/AuthProvider';
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
@@ -46,6 +47,9 @@ const Login = () => {
 
   return (
     <div className="mb-24">
+        <Helmet>
+            <title>LUXENest | Log in</title>
+        </Helmet>
       <form onSubmit={handleLogin} className="md:w-1/3 lg:w-1/3 mx-auto bg-base-100 p-12 rounded-2xl my-4 md:8 lg:my-26">
         <img
           className="h-8"

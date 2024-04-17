@@ -12,6 +12,7 @@ import "./styles.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Estates from "./Estates/Estates";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
     
@@ -25,6 +26,9 @@ const Home = () => {
   };
   return (
     <div className="bg-base-200 pb-12">
+        <Helmet>
+            <title>LUXENest | Home</title>
+        </Helmet>
         <div className="container mx-auto">
       {/* <h2 className="text-2xl">This is home</h2> */}
       <Swiper
