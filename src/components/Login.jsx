@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <div className="mb-24">
-      <form onSubmit={handleLogin} className="md:w-1/3 lg:w-1/3 mx-auto bg-base-100 p-12 rounded-2xl my-4 md:my-32">
+      <form onSubmit={handleLogin} className="md:w-1/3 lg:w-1/3 mx-auto bg-base-100 p-12 rounded-2xl my-4 md:8 lg:my-26">
         <img
           className="h-8"
           src="https://i.ibb.co/dGBVqT4/Screenshot-from-2024-04-17-08-56-39-removebg-preview.png"
