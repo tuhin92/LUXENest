@@ -1,8 +1,23 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 const Register = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleRegister = (e)=> {
+        e.preventDefault();
+        console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, photo, email, password);
+    }
+
     return (
         <div className="mb-24">
-      <form className="md:w-1/3 lg:w-1/3 mx-auto bg-base-100 p-12 rounded-2xl my-4 md:my-32">
+      <form onSubmit={handleRegister} className="md:w-1/3 lg:w-1/3 mx-auto bg-base-100 p-12 rounded-2xl my-4 md:my-32">
         <img
           className="h-8"
           src="https://i.ibb.co/dGBVqT4/Screenshot-from-2024-04-17-08-56-39-removebg-preview.png"
@@ -47,17 +62,22 @@ const Register = () => {
             required
           />
         </div>
-        <div className="form-control">
+        <div className="form-control relative">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
           <input
-            type="password"
+            type={ showPassword ? "text" : "password"}
             placeholder="Password"
             name="password"
-            className="input input-bordered"
+            className="input input-bordered pr-10"
             required
           />
+          <span onClick={() => setShowPassword(!showPassword)} className="absolute inset-y-0 right-0 flex items-center mt-10 pr-3 text-xl">
+            {
+                showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye/>
+            }
+          </span>
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Register</button>
