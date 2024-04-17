@@ -1,6 +1,7 @@
 import './Estate.css'
+import { Link } from 'react-router-dom';
 const Estate = ({ estate }) => {
-    const { category, estate_title, status, area, description, price, image } =
+    const {id, category, estate_title, status, area, description, price, image } =
       estate;
     return (
       <div className="mt-8">
@@ -19,7 +20,9 @@ const Estate = ({ estate }) => {
               <div className="badge bg-purple-200 p-4">{area}</div>
               <div className="badge bg-purple-200 p-4">{status}</div>
             </div>
-            <button className="btn bg-amber-400">View Property</button>
+                <Link to={`/estate/${id}`}>
+                    <button className="btn bg-amber-400">View Property</button>
+                </Link>
           </div>
         </div>
       </div>

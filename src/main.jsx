@@ -12,7 +12,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import AboutUS from './components/AboutUS';
 import Errorpage from './components/ErrorPage/Errorpage';
-
+import EstateDetails from './components/EstateDetails/EstateDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: '/aboutUs',
         element: <AboutUS></AboutUS>
+      },
+      {
+        path: '/estate/:id',
+        element: <EstateDetails></EstateDetails>,
+        loader: ()=> fetch('../estates.json')
       }
     ]
   },
