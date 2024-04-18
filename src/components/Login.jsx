@@ -67,7 +67,8 @@ const Login = () => {
 
 
   return (
-    <div className="mb-24">
+    <div className="animate__animated animate__pulse mb-12">
+            <div className="mb-24">
         <Helmet>
             <title>LUXENest | Log in</title>
         </Helmet>
@@ -131,6 +132,7 @@ const Login = () => {
       <div>
       
       </div>
+    </div>
     </div>
   );
 };

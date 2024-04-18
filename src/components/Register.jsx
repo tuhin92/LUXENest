@@ -34,7 +34,8 @@ const Register = () => {
     }
 
     return (
-        <div className="mb-24">
+        <div className="animate__animated animate__slideInDown mb-12">
+                <div className="mb-24">
       <form onSubmit={handleRegister} className="md:w-1/3 lg:w-1/3 mx-auto bg-base-100 p-12 rounded-2xl my-4 md:my-32">
         <img
           className="h-8"
@@ -103,6 +104,7 @@ const Register = () => {
         <p className="text-center mt-6">Already have an account? <Link to="/login"> <span className='text-blue-600 font-bold'>Login</span></Link> </p>
       </form>
     </div>
+        </div>
     );
 };
 

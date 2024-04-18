@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet-async";
 
 const CutomerReview = () => {
   return (
-    <div className="container mx-auto my-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+    <div className="animate__animated animate__lightSpeedInRight mb-12">
+        <div className="container mx-auto my-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
       {/* review 1  */}
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
@@ -57,6 +58,7 @@ const CutomerReview = () => {
           </div>
         </div>
       </div>
+    </div>    
     </div>
   );
 };

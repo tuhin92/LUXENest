@@ -3,7 +3,9 @@ import MapComponent from "./MapComponent";
 
 const AboutUS = () => {
   return (
-    <div className="container mx-auto mb-20 mt-8">
+
+    <div className="animate__animated animate__slideInRight mb-12">
+        <div className="container mx-auto mb-20 mt-8">
       <Helmet>
         <title>LUXENest | About Us</title>
       </Helmet>
@@ -49,6 +51,7 @@ const AboutUS = () => {
         <h2 className="text-4xl font-bold text-purple-800 mb-4">Location</h2>
       <MapComponent></MapComponent>
       </div>
+    </div>
     </div>
   );
 };

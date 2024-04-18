@@ -10,7 +10,8 @@ const Profile = () => {
         <title>LUXENest | Profile</title>
       </Helmet>
 
-      <div className="flex justify-center">
+        <div className="animate__animated animate__fadeInUp mb-12">
+        <div className="flex justify-center">
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
             <img
@@ -30,6 +31,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+        </div>
     </div>
   );
 };
