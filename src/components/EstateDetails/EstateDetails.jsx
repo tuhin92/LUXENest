@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const EstateDetails = () => {
   const estates = useLoaderData();
@@ -30,6 +30,7 @@ const EstateDetails = () => {
             <div className="badge bg-purple-200 p-4">{estate.status}</div>
           </div>
           <button className="btn bg-amber-400">Book Now</button>
+          <Link to="/" className="btn btn-success">Back to Home</Link>
         </div>
       </div>
     </div>
