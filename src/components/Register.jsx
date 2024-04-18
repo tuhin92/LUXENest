@@ -2,7 +2,14 @@ import React, { useContext, useState } from 'react';
 import { Link , useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 const Register = () => {
+    // show error message 
+    const [registerError, setRegisterError] = useState('')
 
     const {createUser} = useContext(AuthContext);
 
@@ -17,9 +24,24 @@ const Register = () => {
         const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
-        console.log(name, photo, email, password);
+        // console.log(name, photo, email, password);
         console.log("Name:", name);
         console.log("Photo URL:", photo);
+        // reset error 
+        setRegisterError('');
+
+        if(password.length < 6){
+            setRegisterError('Password should be at least 6 character or longer');
+            return;
+        }
+        else if(!/[A-Z]/.test(password)){
+            setRegisterError('Your password should at least one uppercase character.');
+            return;
+        }
+        else if(!/[a-z]/.test(password)){
+            setRegisterError('Your password should at least one lowercase character.');
+            return;
+        }
 
 
         // create user in firebase
@@ -30,6 +52,7 @@ const Register = () => {
         })
         .catch(error =>{
             console.error(error);
+            setRegisterError(error.message);
         } )
     }
 
@@ -101,7 +124,10 @@ const Register = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Register</button>
         </div>
-        <p className="text-center mt-6">Already have an account? <Link to="/login"> <span className='text-blue-600 font-bold'>Login</span></Link> </p>
+        <p className="text-center mt-6 mb-4 text-base">Already have an account? <Link to="/login"> <span className='text-blue-600 font-bold'>Login</span></Link> </p>
+        {
+            registerError && <p className='text-red-700 text-xl'>{registerError}</p>
+        }
       </form>
     </div>
         </div>

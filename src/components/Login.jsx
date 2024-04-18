@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+    // show error message 
+    const [loginError, setLoginError] = useState(' ');
 
     const [user, setUser] = useState(null);
 
@@ -20,6 +22,8 @@ const Login = () => {
 
 
   const handleLogin = (e) => {
+    // reset error 
+    setLoginError('');
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get('email');
@@ -33,7 +37,8 @@ const Login = () => {
         naviagte('/');
     })
     .catch( error => {
-        console.log('Invalid password or email');;
+        console.log('Invalid password or email');
+        setLoginError(error.message);
     })
   };
 
@@ -117,6 +122,9 @@ const Login = () => {
           >
             Forgot password?
           </Link>
+          {
+            loginError && <p className='text-red-600'>{loginError}</p>
+        }
         </label>
         <div className="form-control mt-6 gap-4">
           <button className="btn btn-primary">Login</button>

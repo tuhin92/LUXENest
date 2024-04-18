@@ -4,12 +4,12 @@ import MapComponent from "./MapComponent";
 const AboutUS = () => {
   return (
 
-    <div className="animate__animated animate__slideInRight mb-12">
-        <div className="container mx-auto mb-20 mt-8">
+    <div className="mb-12">
+        <div className="container mx-auto mb-12 mt-8 animate__animated animate__slideInRight">
       <Helmet>
         <title>LUXENest | About Us</title>
       </Helmet>
-      <div className="hero min-h-[80vh] bg-purple-200 rounded-2xl ">
+      <div className="hero min-h-[70vh] bg-purple-200 rounded-2xl ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://i.ibb.co/bmGrQ46/pexels-sabel-blanco-1662549.jpg"
@@ -47,11 +47,11 @@ const AboutUS = () => {
           </div>
         </div>
       </div>
-      <div className="mt-24">
+    </div>
+    <div className="container mx-auto mt-16 animate__animated animate__slideInLeft">
         <h2 className="text-4xl font-bold text-purple-800 mb-4">Location</h2>
       <MapComponent></MapComponent>
       </div>
-    </div>
     </div>
   );
 };
