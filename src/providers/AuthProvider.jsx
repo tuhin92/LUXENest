@@ -17,15 +17,15 @@ const AuthProvider = ({children}) => {
     const githubProvider = new GithubAuthProvider();
 
     // Function to create a new user with email and password
-    const createUser = (email, password, photoURL) => {
+    const createUser = (email, password, photoURL, displayName ) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password, photoURL);
+        return createUserWithEmailAndPassword(auth, email, password, photoURL, displayName);
     };
 
     // Function to sign in user with email and password
-    const signInUser = (email, password, name, photo) => {
+    const signInUser = (email, password, displayName, photoURL) => {
         setLoading(true);
-        return signInWithEmailAndPassword(auth, email, password, name, photo);
+        return signInWithEmailAndPassword(auth, email, password, displayName, photoURL);
     };
 
     // Function to sign in with Google

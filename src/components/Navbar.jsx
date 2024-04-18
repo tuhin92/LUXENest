@@ -56,8 +56,13 @@ const Navbar = () => {
   <div className="navbar-end gap-4">
     {
         user ? <>
-            <span><img className="h-12 w-12" src={user.photoURL} alt="" /></span>
-            <span>{user.displayName}</span>
+            <div className="flex items-center gap-2">
+    <NavLink to='/profile' className="flex items-center gap-2">
+        <span><img className="h-12 w-12" src={user.photoURL} alt="" /></span>
+        <span className="font-bold">{user.displayName}</span>
+    </NavLink>
+</div>
+
             <button onClick={handleLogOut} className="btn bg-red-600 text-white">Sign Out</button>
         </>
         : <button className="btn btn-success text-white"><NavLink to='/login'>Login</NavLink></button>
