@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import { GithubAuthProvider } from "firebase/auth";
 
 // Create context for authentication
 export const AuthContext = createContext(null);
@@ -11,6 +12,9 @@ const AuthProvider = ({children}) => {
 
     // Create GoogleAuthProvider here
     const googleProvider = new GoogleAuthProvider();
+
+    // Create Github provider 
+    const githubProvider = new GithubAuthProvider();
 
     // Function to create a new user with email and password
     const createUser = (email, password, photoURL) => {
@@ -30,6 +34,12 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, googleProvider);
     };
 
+    // Function to sign in with github 
+    const signInWithGithub = () =>{
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider);
+    }
+
     // Function to observe authentication state changes
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -46,7 +56,7 @@ const AuthProvider = ({children}) => {
     };
 
     // Value object to be provided by the context
-    const authInfo = { user, createUser, signInUser, logOut, loading, signInWithGoogle };
+    const authInfo = { user, createUser, signInUser, logOut, loading, signInWithGoogle, signInWithGithub };
 
     // Provide the authInfo value to the children components
     return (

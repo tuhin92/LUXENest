@@ -7,7 +7,8 @@ import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
-    const {signInUser, signInWithGoogle} = useContext(AuthContext);
+    // sign in method 
+    const {signInUser, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -33,6 +34,7 @@ const Login = () => {
   };
 
 
+    //   google sign in 
   const handleGoogleSignIn = () => {
     console.log('Attempting Google sign-in...');
     signInWithGoogle()
@@ -43,6 +45,19 @@ const Login = () => {
         console.error('Error signing in with Google:', error);
     });
 }
+
+    // github sign in 
+    const handleGithubSignIn = () => {
+        console.log('Attempting Github sign-in...');
+        signInWithGithub()
+            .then(result => {
+                console.log('GitHub sign-in successful:', result.user);
+            })
+            .catch(error => {
+                console.error('Error signing in with GitHub:', error);
+            });
+    };
+    
 
 
   return (
@@ -104,7 +119,7 @@ const Login = () => {
           <Link to="/register" className='text-blue-600 font-bold ml-1'>Register</Link>
         </p>
         <button onClick={handleGoogleSignIn} className="btn  bg-green-600"><FaGoogle className='text-2xl'></FaGoogle>Sign in with Google</button>
-          <button className="btn bg-orange-600"><FaGithub className='text-2xl'></FaGithub> Sign in with Github</button>
+          <button onClick={handleGithubSignIn} className="btn bg-orange-600"><FaGithub className='text-2xl'></FaGithub> Sign in with Github</button>
         </div>
       </form>
       <div>

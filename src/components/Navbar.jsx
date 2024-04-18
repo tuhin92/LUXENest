@@ -21,16 +21,17 @@ const Navbar = () => {
 
     const navLinks = <>
     <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/aboutUs'>About Us</NavLink></li>
-    {/* <li><NavLink to='/login'>Login</NavLink></li> */}
-    {/* <li><NavLink to='/register'>Register</NavLink></li> */}
-    <li><NavLink to='/customersReview'>Customers Reviews</NavLink></li>
     {
         user &&
         <>
             <li><NavLink to='/profile'>Profile</NavLink></li>
         </>
     }
+    <li><NavLink to='/aboutUs'>About Us</NavLink></li>
+    {/* <li><NavLink to='/login'>Login</NavLink></li> */}
+    {/* <li><NavLink to='/register'>Register</NavLink></li> */}
+    <li><NavLink to='/customersReview'>Customers Reviews</NavLink></li>
+    
     </>
     return (
         <div className="container mx-auto">
