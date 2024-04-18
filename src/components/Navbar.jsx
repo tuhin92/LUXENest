@@ -56,7 +56,8 @@ const Navbar = () => {
   <div className="navbar-end gap-4">
     {
         user ? <>
-            <span>{user.email}</span>
+            <span><img className="h-12 w-12" src={user.photoURL} alt="" /></span>
+            <span>{user.displayName}</span>
             <button onClick={handleLogOut} className="btn bg-red-600 text-white">Sign Out</button>
         </>
         : <button className="btn btn-success text-white"><NavLink to='/login'>Login</NavLink></button>

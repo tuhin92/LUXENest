@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
+    const [user, setUser] = useState(null);
+
     // sign in method 
     const {signInUser, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
 

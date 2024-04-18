@@ -18,9 +18,12 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(name, photo, email, password);
+        console.log("Name:", name);
+        console.log("Photo URL:", photo);
+
 
         // create user in firebase
-        createUser(email, password, photo)
+        createUser(email, password, { displayName: name, photoURL: photo })
         .then(result =>{
             console.log(result.user);
             navigate('/');
