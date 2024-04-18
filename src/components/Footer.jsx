@@ -23,6 +23,10 @@ const Footer = () => {
     <a className="link link-hover">Privacy policy</a>
     <a className="link link-hover">Cookie policy</a>
   </nav>
+  <nav>
+    <h6 className="footer-title">Payment Methods</h6> 
+    <img className="h-32" src="https://i.ibb.co/n6s5FDX/Screenshot-from-2024-04-18-14-41-56.png" alt="" />
+  </nav>
 </footer>
     </div>
   );
