@@ -1,14 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { AuthContext } from '../providers/AuthProvider';
 const Register = () => {
 
     const {createUser} = useContext(AuthContext);
 
-
-
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
  
     const handleRegister = (e)=> {
         e.preventDefault();
@@ -24,6 +23,7 @@ const Register = () => {
         createUser(email, password, photo)
         .then(result =>{
             console.log(result.user);
+            navigate('/');
         })
         .catch(error =>{
             console.error(error);

@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { AuthContext } from '../providers/AuthProvider';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
 
@@ -40,6 +42,7 @@ const Login = () => {
     signInWithGoogle()
     .then(result => {
         console.log('Google sign-in successful:', result.user);
+        naviagte('/');
     })
     .catch(error => {
         console.error('Error signing in with Google:', error);
@@ -52,6 +55,7 @@ const Login = () => {
         signInWithGithub()
             .then(result => {
                 console.log('GitHub sign-in successful:', result.user);
+                naviagte('/');
             })
             .catch(error => {
                 console.error('Error signing in with GitHub:', error);
