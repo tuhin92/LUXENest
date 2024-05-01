@@ -109,6 +109,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="container mx-auto my-6">
+        <h2 className="text-4xl">ajhfjahjhfjahjh</h2>
+        <img src="https://i.postimg.cc/pr8CZsHp/Blue-and-Pink-Modern-Tech-Electronics-and-Technology-Retractable-Exhibition-Banner.jpg" alt="" />
+      </div>
     </div>
   );
 };
