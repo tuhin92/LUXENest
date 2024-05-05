@@ -36,6 +36,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/customersReview">Customers Reviews</NavLink>
       </li>
+      <li>
+        <NavLink to="/budgetManage">Budget Managing</NavLink>
+      </li>
     </>
   );
   return (

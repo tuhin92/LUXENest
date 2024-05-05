@@ -19,6 +19,7 @@ import PrivateRoutes from './Routes/PrivateRoutes';
 import Profile from './components/Profile';
 import { HelmetProvider } from 'react-helmet-async';
 import { createRoot } from 'react-dom/client'; // Import createRoot from 'react-dom/client'
+import BudgetManaging from './components/BudgetManaging';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,9 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
+      },{
+        path: '/budgetManage',
+        element: <BudgetManaging></BudgetManaging>
       }
     ]
   },
