@@ -114,6 +114,9 @@ const Home = () => {
             <Estates></Estates>
           </div>
         </div>
+        <div className="my-20">
+          <img className="" src="https://i.ibb.co/9qZgL6P/Blue-and-Pink-Modern-Tech-Electronics-and-Technology-Retractable-Exhibition-Banner-1.jpg" alt="" />
+        </div>
       </div>
     </div>
   );

@@ -9,6 +9,12 @@ const EstateDetails = () => {
   return (
     <div className="container  w-[890px] mx-auto py-16">
       <div className="card bg-base-100 shadow-xl">
+
+        {/* EMI Section  */}
+      <div className=" my-12">
+          <img src="https://i.ibb.co/WFp1hQd/Blue-Minimalist-Corporate-Advertising-Linked-In-Banner.jpg" alt="" />
+        </div>
+        
         <figure>
           <img src={estate.image} alt="Shoes" />
         </figure>
