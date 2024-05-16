@@ -1,5 +1,3 @@
-import React from 'react';
-
 const BudgetManaging = () => {
     return (
         <div className='container mx-auto my-16'>

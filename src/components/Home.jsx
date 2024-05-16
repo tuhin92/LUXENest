@@ -102,8 +102,14 @@ const Home = () => {
           </Swiper>
         </div>
 
+        {/* Discount section */}
+        <div>
+          <h2 className="my-12 text-4xl text-center text-purple-950 font-bold">Eid Offer</h2>
+          <img src="https://i.ibb.co/D9TF2Ld/Blue-and-Pink-Modern-Tech-Electronics-and-Technology-Retractable-Exhibition-Banner.jpg" alt="" />
+        </div>
+
         {/* Estate section  */}
-        <div className="mb-12">
+        <div className="mb-12 mt-10">
           <div className="animate__animated animate__fadeInUp mb-12">
             <Estates></Estates>
           </div>

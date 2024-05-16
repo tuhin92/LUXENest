@@ -55,7 +55,8 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
-      },{
+      },
+      {
         path: '/budgetManage',
         element: <BudgetManaging></BudgetManaging>
       }

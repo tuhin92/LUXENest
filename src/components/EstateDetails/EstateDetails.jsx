@@ -8,7 +8,7 @@ const EstateDetails = () => {
   console.log(estate);
   return (
     <div className="container  w-[890px] mx-auto py-16">
-      <div className="card  bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl">
         <figure>
           <img src={estate.image} alt="Shoes" />
         </figure>
