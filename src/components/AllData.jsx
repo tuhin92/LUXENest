@@ -5,7 +5,7 @@ const AllData = () => {
     const [proparties, setProparties] = useState([]);
 
     useEffect( ()=> {
-        fetch('dataSet.json')
+        fetch('http://localhost:8080/api/data')
         .then( res => res.json())
         .then( data => setProparties(data))
     }, [])
@@ -21,5 +21,4 @@ const AllData = () => {
         </div>
     );
 };
-
 export default AllData;
