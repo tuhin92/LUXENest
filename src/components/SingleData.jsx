@@ -1,8 +1,11 @@
+import React from "react";
+
 const SingleData = ({ property }) => {
     const { image, price, location, name } = property;
+
     return (
         <div className="">
-            <div className="card w-96 shadow-xl  container mx-auto">
+            <div className="card w-96 shadow-xl container mx-auto">
                 <figure><img src={image} alt="image" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
