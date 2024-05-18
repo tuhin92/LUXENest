@@ -3,7 +3,7 @@ import AllData from "./AllData";
 const BudgetManaging = () => {
     return (
         <div className='container mx-auto my-16'>
-            <div className="hero">
+            {/* <div className="hero">
                 <div className="">
                     <div className="card shrink-0 w-[450px]  shadow-2xl ">
                         <form className="card-body">
@@ -25,7 +25,7 @@ const BudgetManaging = () => {
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <AllData></AllData>
         </div>
     );
