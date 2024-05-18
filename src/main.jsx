@@ -20,6 +20,7 @@ import Profile from './components/Profile';
 import { HelmetProvider } from 'react-helmet-async';
 import { createRoot } from 'react-dom/client'; // Import createRoot from 'react-dom/client'
 import BudgetManaging from './components/BudgetManaging';
+import FeedBack from './components/FeedBack';
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: '/budgetManage',
         element: <BudgetManaging></BudgetManaging>
+      },
+      {
+        path: '/feedback',
+        element:<FeedBack></FeedBack>
       }
     ]
   },

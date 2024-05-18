@@ -39,6 +39,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/budgetManage">Budget Managing</NavLink>
       </li>
+      <li>
+        <NavLink to="/feedback">FeedBack</NavLink>
+      </li>
     </>
   );
   return (
