@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const FeedBack = () => {
     const [feedback, setFeedback] = useState({
@@ -18,24 +20,12 @@ const FeedBack = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Submitting feedback:', feedback); // For debugging
-        axios.post('http://localhost:8080/api/feedback', feedback)
-            .then(response => {
-                console.log('Response:', response.data); // For debugging
-                // Reset form after successful submission
-                setFeedback({
-                    name: '',
-                    rating: 0,
-                    comment: ''
-                });
-            })
-            .catch(error => {
-                console.error('Error submitting feedback:', error);
-            });
+        toast.success('FeedBack Submitted Successfully !');
     };
 
     return (
         <div className='my-24 container mx-auto'>
+            <ToastContainer /> {/* Toast container */}
             <h2 className='text-2xl font-bold mb-4'>Submit Feedback</h2>
             <form onSubmit={handleSubmit}>
                 <div className='mb-4'>
