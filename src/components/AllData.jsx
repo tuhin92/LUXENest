@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import SingleData from "./SingleData";
 
 const AllData = () => {
-    const [properties, setProperties] = useState([]);
+    const [allProperties, setAllProperties] = useState([]); // State to store all properties fetched from the API
+    const [properties, setProperties] = useState([]); // State to store filtered properties
     const [showAll, setShowAll] = useState(false);
     const [searchLocation, setSearchLocation] = useState("");
     const [searchPrice, setSearchPrice] = useState("");
@@ -10,7 +11,10 @@ const AllData = () => {
     useEffect(() => {
         fetch('http://localhost:8080/api/data')
             .then(res => res.json())
-            .then(data => setProperties(data))
+            .then(data => {
+                setAllProperties(data); // Store all properties fetched from the API
+                setProperties(data); // Initialize filtered properties with all properties
+            })
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
@@ -24,14 +28,14 @@ const AllData = () => {
 
     const handleSearch = () => {
         // Filter properties based on search criteria
-        const filteredProperties = properties.filter(property => {
+        const filteredProperties = allProperties.filter(property => {
             // Check if location matches searchLocation (case insensitive)
             const locationMatch = property.location.toLowerCase().includes(searchLocation.toLowerCase());
             // Check if price is less than or equal to searchPrice (if searchPrice is a valid number)
             const priceMatch = !isNaN(parseFloat(searchPrice)) && parseFloat(property.price) <= parseFloat(searchPrice);
             return locationMatch && (isNaN(parseFloat(searchPrice)) || priceMatch);
         });
-        setProperties(filteredProperties);
+        setProperties(filteredProperties); // Update filtered properties state
     };
 
     return (
