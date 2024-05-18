@@ -42,6 +42,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/feedback">FeedBack</NavLink>
       </li>
+      <li>
+        <NavLink to="/payment">Payment</NavLink>
+      </li>
     </>
   );
   return (
